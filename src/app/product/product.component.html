@@ -1,0 +1,9 @@
+<h2>Liste des produits</h2>
+
+<button routerLink="/products/create">Ajouter un produit</button>
+
+<section class="product-container">
+    @for (product of productsList$ | async; track product.id) {
+        <app-product-standalone [productName]="product.name" [description]="product.description" [price]="product.price"></app-product-standalone>
+    }
+</section>
