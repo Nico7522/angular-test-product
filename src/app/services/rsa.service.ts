@@ -4,7 +4,8 @@ import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { PublicKey } from '../secret/Key.Model';
 import * as Forge from 'node-forge';
 import { FromBytesToString } from '../Utils/Utils';
-
+import { AES } from 'crypto-ts';
+import * as CryptoTS from 'crypto-ts';
 @Injectable({
   providedIn: 'root',
 })
@@ -29,7 +30,8 @@ export class RsaService {
       .pipe(
         map((response) => {
           // const decryptedKey = FromBytesToString(response.publicKey);
-          this._key = response.publicKey;
+          let decodedKey = atob(response.publicKey);
+          this._key = decodedKey;
           this._rsa = Forge.pki.publicKeyFromPem(this._key);
           this._$rsa.next(this._rsa);
           console.log(this._rsa);
