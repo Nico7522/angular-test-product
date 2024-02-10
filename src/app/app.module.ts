@@ -5,9 +5,12 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { ProductComponent } from './shared/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QuitComponent } from './components/quit/quit.component';
+import { ComeComponent } from './components/come/come.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent],
+  declarations: [AppComponent, NavigationComponent, QuitComponent, ComeComponent, ModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
