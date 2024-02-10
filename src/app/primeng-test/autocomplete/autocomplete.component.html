@@ -1,0 +1,7 @@
+<h3>Autocomplete</h3>
+
+<div class="card flex justify-content-center">
+    <form [formGroup]="formGroup">
+        <p-autoComplete formControlName="product" [suggestions]="filteredProduct" (completeMethod)="filterProduct($event)" field="name"></p-autoComplete>
+    </form>
+</div>

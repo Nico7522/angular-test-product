@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComeComponent } from './components/come/come.component';
 import { QuitComponent } from './components/quit/quit.component';
 import { alertGuard } from './components/alert.guard';
+import { AutocompleteComponent } from './primeng-test/autocomplete/autocomplete.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,13 @@ const routes: Routes = [
   },
   { path: 'quit', canDeactivate: [alertGuard], component: QuitComponent },
   { path: 'come', component: ComeComponent },
+  {
+    path: 'primeng',
+    loadChildren: () =>
+      import('./primeng-test/primeng-test.module').then(
+        (m) => m.PrimengTestModule
+      ),
+  },
 ];
 
 @NgModule({
