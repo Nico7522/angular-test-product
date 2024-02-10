@@ -9,12 +9,22 @@
     box-shadow: -8px 3px 5px 0px rgba(0,0,0,0.75);
     border-radius: 5px;
     text-align: center;
+    animation-name: apparition;
+    animation-duration: 0.5s;
+}
+
+.modal:hover {
+    opacity: 1;
 }
 
 .confirm {
-    opacity: 1 ;
-    color: #000;
+    margin-top: 150px;
 }
+
+@keyframes apparition {
+    from {margin-top: -1000px;}
+    to {margin-top: 0;}
+  }
 
 /* CSS */
 .button-5 {

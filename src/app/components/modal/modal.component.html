@@ -1,6 +1,6 @@
-<div class="modal" [hidden]="!show">
-    <h2>Voulez-vous vraiment quitter ?</h2>
+<div class="modal" [class]="!show ? '' : 'anim'" [hidden]="!show">
     <div class="confirm">
+        <h2>Voulez-vous vraiment quitter ?</h2>
         <button class="button-5"  (click)='selected("yes")'>Oui</button>
         <button class="button-5"  (click)='selected("no")'>Non</button>
     </div>
